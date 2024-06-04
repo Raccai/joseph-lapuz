@@ -19,7 +19,7 @@ export const UpdateCardForm = ({ id }) => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const response = await fetch("/Admin/Cards/" + id, {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/Cards/" + id, {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }
@@ -76,7 +76,7 @@ export const UpdateCardForm = ({ id }) => {
 
       console.log(currentFileUrl)
 
-      const response = await fetch("/Admin/Cards/" + id, {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/Cards/" + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

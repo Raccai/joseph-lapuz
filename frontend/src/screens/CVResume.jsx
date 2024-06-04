@@ -16,7 +16,7 @@ const CVResume = () => {
     setCardsLoaded(false);
 
     const fetchCards = async() => {
-      const response = await fetch("/Cards");
+      const response = await fetch("https://joseph-lapuz.onrender.com/Cards");
       const json = await response.json();
 
       if (response.ok) {

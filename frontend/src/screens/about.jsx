@@ -21,7 +21,7 @@ const About = () => {
     setAboutLoaded(false)
 
     const fetchAbout = async () => {
-      const response = await fetch("/About")
+      const response = await fetch("https://joseph-lapuz.onrender.com/About")
       const json = await response.json();
 
       if (response.ok) {

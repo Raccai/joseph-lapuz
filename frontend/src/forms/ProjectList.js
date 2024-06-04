@@ -25,7 +25,7 @@ export const ProjectList = () => {
     setSuccess("");
     setError("");
 
-    const response = await fetch("/Admin/" + id, {
+    const response = await fetch("https://joseph-lapuz.onrender.com/Admin/" + id, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${user.token}`

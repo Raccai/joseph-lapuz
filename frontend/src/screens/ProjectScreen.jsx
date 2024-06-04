@@ -18,7 +18,7 @@ export default function ProjectScreen() {
 
   useEffect(() => {
     const fetchProjectData = async () => {
-      const response = await fetch(`/Projects/${id}`);
+      const response = await fetch(`https://joseph-lapuz.onrender.com/Projects/${id}`);
       const json = await response.json();
 
       if (response.ok) {

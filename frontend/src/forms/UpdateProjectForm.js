@@ -15,7 +15,7 @@ export const UpdateProjectForm = ({ id }) => {
 
   useEffect(() => {
     const fetchProject = async () => {
-      const response = await fetch("/Admin/" + id, {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/" + id, {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }
@@ -100,7 +100,7 @@ export const UpdateProjectForm = ({ id }) => {
       };
 
       console.log("Updating project with data: ", projectData);
-      const response = await fetch("/Admin/" + id, {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/" + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

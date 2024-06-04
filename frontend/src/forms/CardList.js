@@ -12,7 +12,7 @@ export const CardList = () => {
 
   useEffect(() => {
     const fetchCards = async() => {
-      const response = await fetch("/Admin/Cards", {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/Cards", {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }

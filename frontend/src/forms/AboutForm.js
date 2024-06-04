@@ -18,7 +18,7 @@ export const AboutForm = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       if (user) {
-        const response = await fetch("/Admin/About", {
+        const response = await fetch("https://joseph-lapuz.onrender.com/Admin/About", {
           headers: {
             "Authorization": `Bearer ${user.token}`
           }
@@ -71,7 +71,7 @@ export const AboutForm = () => {
         image2Url = await uploadImage(imgUrl2);
       }
 
-      const response = await fetch("/Admin/About", {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin/About", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -19,7 +19,7 @@ export const AddProjectForm = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const response = await fetch("/Admin", {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin", {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }
@@ -99,7 +99,7 @@ export const AddProjectForm = () => {
       };
 
       console.log("Adding project with data: ", projectData);
-      const response = await fetch("/Admin", {
+      const response = await fetch("https://joseph-lapuz.onrender.com/Admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
