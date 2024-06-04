@@ -1,0 +1,145 @@
+@import "./colors.css";
+
+.main-title {
+  font-family: "IMFF-b", serif;
+  font-size: 2.4em;
+  color: var(--text);
+}
+
+.sub-title {
+  font-family: "IMFF-b", serif;
+  font-size: 1.8em;
+  color: var(--text);
+}
+
+.card-img {
+  margin-left: 0;
+  flex: 3;
+}
+
+.card-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  font-family: "Helvetica-l", sans-serif;
+  line-height: 1.8em;
+  text-align: left;
+  color: var(--text);
+}
+
+.left-to-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-to-left {
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.left-to-right,
+.right-to-left {
+  width: 100%;
+  gap: 2em;
+  margin: 2em;
+  align-items: center;
+}
+
+.title-body {
+  width: 50%;
+  flex: 2;
+  /* border: 4px black solid; */
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 100px;
+}
+
+.loading-spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-top: 8px solid var(--primary);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1440px) {
+  .left-to-right,
+  .right-to-left {
+    flex-direction: column;
+  }
+  
+  .card-img {
+    margin-top: -1em;
+    width: auto;
+  }
+
+  .title-body {
+    width: 82%;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-to-right,
+  .right-to-left {
+    flex-direction: column;
+  }
+
+  .card-body {
+    font-family: "Helvetica-l", sans-serif;
+    line-height: 1.8em;
+    text-align: left;
+  }
+
+  .card-img {
+    margin-top: -1em;
+    width: auto;
+  }
+
+  .title-body {
+    width: 100%;
+  }
+
+  .loading-container {
+    left: 0;
+  }
+}
+
+@media (max-width: 496px) {
+  .card-img {
+    margin-top: -1em;
+    width: auto;
+  }
+
+  .title-body {
+    width: auto;
+  }
+}

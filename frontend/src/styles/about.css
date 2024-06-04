@@ -1,0 +1,93 @@
+@import './colors.css';
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  width: 50em;
+  /* border: solid 4px #000; */
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.2em;
+}
+
+.aboutTitle {
+  font-size: large;
+}
+
+.aboutTitle h1 {
+  font-family: "IMFF-b", serif;
+  margin-bottom: 0px;
+  color: var(--text);
+  text-align: center;
+}
+
+.aboutBody {
+  font-family: "Helvetica-l", sans-serif;
+  line-height: 1.8em;
+  text-align: left;
+  color: var(--text);
+  width: 28em;
+}
+
+.aboutImages {
+  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutImage {
+  height: 32em;
+  width: 32em;
+  margin: 0 10px;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 1040px) {
+  .aboutText {
+    width: 30em;
+  }
+
+  .aboutBody {
+    width: 26em;
+  }
+
+  .aboutImages {
+    flex-direction: row;
+    height: 24em;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 496px) {
+  .aboutText {
+    width: 20em;
+  }
+
+  .aboutBody {
+    width: 20em;
+  }
+
+  .aboutImages {
+    flex-direction: row;
+    height: 24em;
+    overflow: hidden;
+  }
+
+  .aboutImage:nth-child(2) {
+    height: 16em; /* Adjust the height as needed */
+    width: 8em; /* Adjust the width as needed */
+    position: absolute;
+    top: 13em;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}

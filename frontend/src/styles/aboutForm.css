@@ -1,0 +1,23 @@
+@import './colors.css';
+
+.about-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-form label {
+  font-family: "Helvetica-b", sans-serif;
+  color: var(--text);
+  margin-top: -0.5em;
+  margin-bottom: -2em;
+}
+
+.about-form label:first-child {
+  margin-top: 0em;
+}
+
+.about-form input, 
+.about-form textarea {
+  width: 100%;
+}

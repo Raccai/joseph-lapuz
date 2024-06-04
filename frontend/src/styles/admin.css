@@ -1,0 +1,122 @@
+@import './colors.css';
+
+.cover-admin {
+  background-color: var(--background);
+  z-index: 2000;
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 300px;
+}
+
+.desktop-notice {
+  font-family: "Helvetica-b", sans-serif;
+  color: var(--text);
+  visibility: hidden;
+}
+
+.admin-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 80%;
+  visibility: visible;
+}
+
+.admin-form-wrapper {
+  border-radius: 0.5em;
+  background-color: var(--background);
+  box-shadow: 5px 8px 8px 8px rgba(36, 36, 36, 0.514);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-form .headers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.4em 2em;
+  margin-bottom: -1em;
+}
+
+.admin-form .headers h1,
+.admin-form .headers h4 {
+  color: var(--text);
+}
+
+.admin-form .headers h1 {
+  font-size: 1.8rem;
+  font-family: "Helvetica-b", sans-serif;
+  margin-bottom: -0.1em;
+}
+
+.admin-form .headers h4 {
+  font-size: 0.9rem;
+  font-family: "Helvetica-l", sans-serif;
+}
+
+nav {
+  z-index: 5000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--primary);
+  width: 100%;
+  height: 10%;
+}
+
+nav button {
+  padding: 0.6em 2em 1em 2em;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text);
+  border-radius: 0.5em;
+  width: 50em;
+  transition: all 150ms ease-in-out;
+  border-bottom: 0.5em solid transparent;
+  border-top: 1em solid transparent;
+  font-family: "Helvetica-b", sans-serif;
+}
+
+nav button:hover {
+  background-color: var(--highlighted);
+}
+
+nav .active-btn {
+  background-color: var(--highlighted);
+}
+
+@media (max-width: 1156px) {
+  .cover-admin {
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .admin-form-container {
+    visibility: hidden;
+  }
+
+  .desktop-notice {
+    visibility: visible;
+  }
+}

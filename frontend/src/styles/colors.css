@@ -1,0 +1,21 @@
+:root {
+  --primary: #D8979F;
+  --background: #FFFFFF;
+  --highlighted: #f5b1b9;
+  --text: #2C2C2C;
+  --grey: #ccc;
+  --toggle: #2C2C2C;
+  --error: #f84646;
+  --success: #2ee97c;
+}
+
+[data-theme = "dark"] {
+  --primary: #D8979F;
+  --background: #2C2C2C;
+  --highlighted: #f5b1b9;
+  --text: #FFFFFF;
+  --grey: #ccc;
+  --toggle: #FFFFFF;
+  --error: #f84646;
+  --success: #2ee97c;
+}

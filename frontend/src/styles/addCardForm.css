@@ -1,0 +1,31 @@
+@import './colors.css';
+@import './fonts.css';
+
+.add-card-container {
+  border-radius: 0.1em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form .add-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.add-card-container label {
+  color: var(--text);
+  font-family: "Helvetica-b", sans-serif;
+}
+
+.add-card-container .images-section {
+  margin-top: 1em;
+}
+
+.add-card-container  .input-containers {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,28 @@
+@import "./colors.css";
+
+.counter {
+  width: 100%;
+  height: 100vh;
+  color: var(--text);
+  font-family: "IMFF-b", serif;
+  font-size: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9101;
+  padding: 0.4em 0.4em;
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9100;
+  display: flex;
+  background-color: var(--background);
+}

@@ -1,0 +1,464 @@
+@import './colors.css';
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+.cursor {
+  height: 8px;
+  width: 8px;
+  background-color: var(--primary);
+  cursor: none;
+}
+
+.follower {
+  height: 32px;
+  width: 32px;
+  border: 2px solid var(--primary);
+  cursor: none;
+}
+
+.cursor,
+.follower {
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.8;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px; /* Adjust width as needed */
+  height: 100vh; /* Set height to full viewport height */
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align content */
+  padding: 40px 20px 20px 20px;
+  overflow: hidden; /* Hide overflow content */
+  box-sizing: border-box;
+  position: fixed;
+  transition: left 0.3s ease; /* Add transition effect */
+  z-index: 100;
+}
+
+.logo img {
+  width: 150px; /* Make the logo bigger */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add space below logo */
+  filter: saturate(10) invert(1);
+}
+
+.header img {
+  width: 32px; /* Make the logo bigger */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add space below logo */
+  filter: saturate(10) invert(1);
+  position: absolute;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  visibility: hidden;
+}
+
+.links a, .social-links a, .footer {
+  display: block;
+  color: var(--text);
+  font-family: 'Outfit Light', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.links a {
+  display: block;
+  color: var(--text);
+  font-family: 'Outfit Light', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 20px 0 20px 0; /* Add space between links */
+  transition: color 0.3s ease;
+}
+
+.links a:hover,         
+.links a:focus-visible {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.links a.active {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.links {
+  margin-bottom: 30px;
+  /* border: 1px solid #ccc; /* Add border */
+}
+
+.social-links {
+  width: 190px; /* Occupy full width */
+  display: flex;
+  flex-direction: row; /* Arrange links vertically */
+  align-items: flex-start; /* Align links to the start (left) of the sidebar */
+  margin: 0 0 20px 0; /* Add space between links */
+}
+
+.social-links a {
+  display: block; /* Ensure each link takes up a full width */
+  font-family: 'Outfit Light', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 200ms ease-in-out;
+}
+
+.social-links img {
+  width: 40px; /* Make social media logos larger */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add space between icon and text */
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  transform: scale(1.2);
+}
+
+.footer {
+  margin-top: auto; /* Push to bottom */
+  font-size: 12px;
+  text-align: left;
+  width: 190px; /* Occupy full width */
+}
+
+.empty-div-black {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  visibility: visible;
+  z-index: 99;
+}
+
+/* For content in about and resume page */
+.content-about-resume {
+  padding: 4em 2em;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Inherit the height of the parent container */
+  margin-left: 300px; /* Remove margin when sidebar is hidden */
+}
+
+/* For content below slider */
+.content-and-slider {
+  visibility: hidden;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+  display: grid;
+  grid-gap: 2em;
+  height: 100%; /* Inherit the height of the parent container */
+  margin-left: 300px; /* Remove margin when sidebar is hidden */
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /* Three items per row */
+  /* border: solid 4px var(--text); */
+  overflow: hidden;
+}
+
+.image-box {
+  height: 24em; /* Increase height */
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-box:hover {
+  transform: scale(1.04);
+}
+
+.sidebar-toggle {
+  all: unset;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 900; /* Ensure button appears above other content */
+  display: none; /* Initially hide the button */
+  background-color: var(--primary);
+  padding: 20px;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+  transform: scale(1);
+}
+
+.sidebar-toggle.active {
+  transform: scale(1.1);
+  background-color: var(--highlighted);
+}
+
+.sidebar-toggle > * {
+  stroke: var(--background);
+  scale: 1.5;
+}
+
+/* Image Slider */
+.img-slider {
+  padding: 20px;
+  margin-left: 300px; /* Initial margin for the sidebar */
+  width: calc(100vw - 320px); /* Adjusted width based on screen width and sidebar width */
+  max-width: calc(100vw - 300px); /* Adjusted max-width based on screen width and sidebar width */
+  overflow: hidden; /* Hide overflow content */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-slider-img {
+  width: 100%; /* Adjusted width to fill the container */
+  max-width: 100%; /* Ensure image does not exceed container width */
+  height: auto; /* Allow height to adjust proportionally */
+  max-height: calc(100vh - 300px); /* Adjusted max-height to fit content and padding */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: translate 300ms ease-in-out;
+}
+
+.img-slider-img img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.img-slider-arrow-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  /* cursor: pointer; */
+  transition: background-color 200ms ease-in-out;
+  border-radius: 5px;
+  margin: 30px;
+  z-index: 1;
+}
+
+.img-slider-arrow-btn:hover,
+.img-slider-arrow-btn:focus-visible {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.img-slider-arrow-btn:hover,
+.img-slider-arrow-btn:focus-visible > * {
+  transform: scale(1.);
+  border-radius: 5px;
+  transition: transform 200ms ease-in-out, background-color 100ms ease-in-out;
+}
+
+.img-slider-arrow-btn:active {
+  background-color: rgba(216, 151, 159, 0.4)
+}
+
+.img-slider-arrow-btn:active > * {
+  fill: white;
+  transition: fill 50ms ease-in-out;
+}
+
+.img-slider-arrow-btn > * {
+  fill: white;
+  stroke: none;
+  width: 2rem;
+  height:  2rem;
+}
+
+.img-slider-nav {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  gap: .25rem;
+  z-index: 1;
+}
+
+.img-slider-nav-btn {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 200ms ease-in-out;
+  margin: 30px 10px 30px 0;
+}
+
+.img-slider-nav-btn:hover,
+.img-slider-nav-btn:focus-visible {
+  transform: scale(1.2);
+}
+
+.img-slider-nav-btn > * {
+  fill: var(--background);
+  stroke: none;
+  height: 100%;
+  width: 100%;
+}
+
+.img-slider-nav-btn:focus-visible > * {
+  stroke: var(--background);
+  fill: var(--primary);
+  height: 100%;
+  width: 100%;
+}
+
+.img-slider-arrow-btn:focus-visible,
+.img-slider-nav-btn:focus-visible {
+  outline: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 1440px) {
+  .content {
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /* Three items per row */
+  }
+
+  .image-box {
+    width: 100%;
+    height: 24em; 
+  }
+}
+
+@media (max-width: 1280px) {
+  .content {
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /* Three items per row */
+  }
+
+  .image-box {
+    width: 100%;
+    height: 24em; 
+  }
+
+  .image-slider {
+    width: calc(100vw); 
+  }
+}
+
+@media (max-width: 1024px) {
+  * {
+    overflow-x: hidden;
+  }
+
+  .sidebarOpen {
+    left: 0;
+  }
+  
+  .sidebarClosed {
+    left: -300px;
+  }
+
+  .content-about-resume {
+    margin-left: 0;
+    margin-top: -2em;
+  }
+
+  .content {
+    margin-left: 0; /* Ensure content takes full width when sidebar is hidden */
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); /* Three items per row */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  .img-slider {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+    width: calc(100vw); /* Full width of the screen */
+    max-width: 100vw; /* Full width of the screen */
+  }
+
+  .image-box {
+    width: 100%;
+    height: 28em;
+  }
+
+  .cursor,
+  .follower {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-about-resume {
+    margin-left: 0;
+  }
+
+  .content {
+    margin-left: 0; /* Ensure content takes full width when sidebar is hidden */
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr)); /* Three items per row */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  .image-box {
+    width: 100%;
+    height: 28em;
+    overflow: hidden;
+  }
+}
+ 
