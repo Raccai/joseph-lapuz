@@ -11,7 +11,9 @@ const cardRoutes = require("./routes/card")
 const app = express();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: ["https://joseph-lapuz.vercel.app/", "https://joseph-lapuz.onrender.com"]
+}))
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
