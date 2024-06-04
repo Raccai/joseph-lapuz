@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json())
 app.use(cors({
-  origin: "https://joseph-lapuz.onrender.com"
+  origin: "https://joseph-lapuz.vercel.app/"
 }))
 
 app.use((req, res, next) => {
