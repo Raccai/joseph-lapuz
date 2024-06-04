@@ -10,11 +10,11 @@ const cardRoutes = require("./routes/card")
 
 const app = express();
 
-app.use(cors({
-  origin: ["https://joseph-lapuz.vercel.app/"],
-  methods: ["GET", "POST", "PATCH", "DELETE"],
-  credentials: true
-}))
+// app.use(cors({
+//   origin: ["https://joseph-lapuz.vercel.app/"],
+//   methods: ["GET", "POST", "PATCH", "DELETE"],
+//   credentials: true
+// }))
 app.use(express.json())
 
 app.use((req, res, next) => {
