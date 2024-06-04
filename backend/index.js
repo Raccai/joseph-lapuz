@@ -18,6 +18,9 @@ app.use(cors({
 app.use(express.json())
 
 app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://joseph-lapuz.onrender.com");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PATH, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   console.log(req.path, req.method)
   next()
 })

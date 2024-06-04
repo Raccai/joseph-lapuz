@@ -19,7 +19,7 @@ const Projects = () => {
     setProjectsLoaded(false);
 
     const fetchProjects = async () => {
-      const response = await fetch("/Projects");
+      const response = await fetch("https://joseph-lapuz.onrender.com/Projects");
       const json = await response.json();
 
       if (response.ok) {
