@@ -10,17 +10,14 @@ const cardRoutes = require("./routes/card")
 
 const app = express();
 
-// app.use(cors({
-//   origin: ["https://joseph-lapuz.vercel.app/"],
-//   methods: ["GET", "POST", "PATCH", "DELETE"],
-//   credentials: true
-// }))
+app.use(cors({
+  origin: ["*"],
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  credentials: true
+}))
 app.use(express.json())
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PATH, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   console.log(req.path, req.method)
   next()
 })
