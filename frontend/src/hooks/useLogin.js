@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/Login", {
+    const response = await fetch("https://joseph-lapuz.onrender.com/Login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
