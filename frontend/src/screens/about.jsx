@@ -138,7 +138,7 @@ const About = () => {
             <div className="aboutImage" ref={img2Ref}>
               <img src={img2} alt="2" />
             </div>
-            <div className="aboutImage" ref={img3Ref}>
+            <div className="aboutImage wow" ref={img3Ref}>
               <img src={about.imgUrl2} alt="3" />
             </div>
           </div>
