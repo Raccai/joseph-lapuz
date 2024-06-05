@@ -13,6 +13,10 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  line-height: 28px;
+}
+
 .cursor {
   height: 8px;
   width: 8px;
