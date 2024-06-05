@@ -1,5 +1,9 @@
 @import "./colors.css";
 
+.content-about-resume {
+  margin-top: -32px;
+}
+
 .main-title {
   font-family: "IMFF-b", serif;
   font-size: 2.4em;
