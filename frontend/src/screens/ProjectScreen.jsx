@@ -47,7 +47,7 @@ export default function ProjectScreen() {
           opacity: 1,
           y: 0,
           duration: 1,
-          stagger: 0.2,
+          stagger: 0.3,
           ease: "power3.out",
         },
         "Start"
