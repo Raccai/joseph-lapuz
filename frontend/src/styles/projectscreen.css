@@ -48,7 +48,7 @@
   align-items: center;
 }
 
-.project-content-container .right-to-left:first-of-type {
+.project-content-container:nth-child(1) {
   margin-top: -40px;
 }
 
