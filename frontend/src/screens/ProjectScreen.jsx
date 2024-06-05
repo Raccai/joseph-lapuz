@@ -87,7 +87,7 @@ export default function ProjectScreen() {
           <div className="loading-spinner"></div>
         </div>
       ) : (
-        <div className="content-about-resume" ref={container}>
+        <div className="content-about-resume project-content-container" ref={container}>
           {projectData.items.map((item, index) => (
             <div
               key={index}

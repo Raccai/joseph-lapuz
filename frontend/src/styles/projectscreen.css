@@ -46,6 +46,9 @@
   gap: 2em;
   margin: 2em;
   align-items: center;
+}
+
+.project-content-container {
   margin-top: -40px;
 }
 
