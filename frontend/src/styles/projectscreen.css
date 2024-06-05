@@ -48,7 +48,7 @@
   align-items: center;
 }
 
-.right-to-left:first-of-type {
+.content-about-resume.project-content-container div:first-of-type {
   margin-top: -60px;
 }
 
