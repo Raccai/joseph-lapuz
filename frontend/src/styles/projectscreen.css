@@ -48,8 +48,8 @@
   align-items: center;
 }
 
-div .right-to-left:first-of-type {
-  margin-top: -40px;
+.right-to-left:first-of-type {
+  margin-top: -60px;
 }
 
 .title-body {
