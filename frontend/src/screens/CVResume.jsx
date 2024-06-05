@@ -85,7 +85,7 @@ const CVResume = () => {
           <div className="loading-spinner"></div>
         </div>
       ):(
-        <section className="content-about-resume">
+        <section className="content-about-resume resume-container">
           {cards.map((card, index) => (
             <div
               className="card-container"

@@ -67,6 +67,10 @@
   object-fit: cover;
 }
 
+.content-about-resume.resume-container div:first-of-type {
+  margin-top: -16px;
+}
+
 /* Media queries for smaller screens */
 @media (max-width: 1100px) {
   .card-content {
