@@ -7,7 +7,7 @@ Visit the live site: [Joseph Lapuz's Portfolio](https://joseph-lapuz.vercel.app/
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies(#technologies)
+- [Technologies](#technologies)
 
 ## Features
 
