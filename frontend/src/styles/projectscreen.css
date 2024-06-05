@@ -48,7 +48,7 @@
   align-items: center;
 }
 
-.project-content-container {
+.project-content-container .right-to-left:first-of-type {
   margin-top: -40px;
 }
 
