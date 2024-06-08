@@ -23,13 +23,12 @@ const Sidebar = ({ open, toggleEmptyDiv, enableToggle }) => {
         <Link to="/CVResume" onClick={() => handleLinkClick('CVResume')} className={activeLink === 'CVResume' ? 'active' : ''}>Curriculum Vitae/Resume</Link>
       </div>
       <div className="social-links">
-        <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><img src="/images/linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer"><img src="/images/instagram.svg" alt="Instagram" /></a>
-        <a href="https://twitter.com/home?lang=en" target="_blank" rel="noreferrer"><img src="/images/twitter.svg" alt="Twitter" /></a>
+        <a href="https://www.linkedin.com/in/joseph-michael-lapuz-3aa268247/" target="_blank" rel="noreferrer"><img src="/images/linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.instagram.com/omni_cheese/?hl=en" target="_blank" rel="noreferrer"><img src="/images/instagram.svg" alt="Instagram" /></a>
       </div>
       <DarkMode />
       <div className="footer">
-        Jojo © 2023
+        Jojo © 2024
       </div>
     </div>
   );
